@@ -12,11 +12,8 @@ set shiftwidth=4
 set smartindent
 set expandtab 
 
-" line numbers
-set nu
-
-" relative line numbers
-set rnu
+" line numbers and numbers is relative
+set nu rnu
 
 " disable auto wrapping of long lines
 set nowrap
@@ -38,14 +35,18 @@ set incsearch
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+" показываем табы в начале строки точками
+set listchars=tab:··
+set list
 
 " plugins section
 call plug#begin('~/.vim/plugged')
 
-Plug 'jremmen/vim-ripgrep'
-Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
-Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'mbbill/undotree'
+Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 
 call plug#end()
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
