@@ -19,6 +19,10 @@ set shiftwidth=4
 set smartindent " >autoindent
 set expandtab " >smarttab
 
+" normal direction for new splits
+set splitbelow
+set splitright
+
 " disable auto wrapping of long lines
 set nowrap
 
